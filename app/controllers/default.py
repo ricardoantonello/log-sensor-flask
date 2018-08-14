@@ -6,17 +6,19 @@ from flask_login import login_user, logout_user, login_required
 from app.models.forms import LoginForm
 from app.models.tables import User
 
+from Sensor import Sensor
+
 @lm.user_loader
 def load_user(user_id):
     return User.get(user_id)
 
-@app.route('/'      , defaults={'user':None})
-@app.route('/<user>')
-@app.route('/index' , defaults={'user':None})
-@app.route('/index/', defaults={'user':None})
-@app.route('/index/<user>')
-def index(user):
-  return render_template('index.html', user=user) # busca por padrao na pasta templates
+@app.route('/')
+@app.route('/index')
+@app.route('/index/')
+def index():
+  s = Sensor()
+  
+  return render_template('index.html', sensor=s) # busca por padrao na pasta templates
 
 @app.route('/login', methods=["GET", "POST"])
 def login():

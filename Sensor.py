@@ -20,7 +20,7 @@ class Sensor:
     elif i==3:  
       u, t = Adafruit_DHT.read(Adafruit_DHT.DHT22, 27) # funciona ok
       #umid3, temp3 = Adafruit_DHT.read_retry(Adafruit_DHT.AM2302, 27)
-    return u, t
+    return t, u
 
 if __name__ == '__main__':
   umid1, temp1 = Adafruit_DHT.read(Adafruit_DHT.DHT11, 4)

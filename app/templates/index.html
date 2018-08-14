@@ -9,17 +9,23 @@
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
         <div class="container">
-          <h1 class="display-3">
-		  {% if user %}
-		    <p>Bem-vindo ao Toilter, {{ user }}!</p>
+          <h1 class="display-5">
+		  {% if current_user.is_authenticated %}
+                    
+                           <p>Bem-vindo ao LogSensor, {{ current_user.name }}!</p>
+                    
 		  {% else %}
-		    <p>Bem-vindo ao Toilter!</p>
+		    <p>Bem-vindo ao LogSensor!</p>
 		  {% endif %}
 	  </h1>
-          <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-          <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+          <p>Este sistema registra os dados do sensor (DHT11) na base de dados local (sqlite), visualiza no navegador (flask e chart.js) e faz backup on-line no Firebase.</p>
+          <p><a class="btn btn-primary btn-lg" href="/sobre" role="button">Conheça o sistema &raquo;</a></p>
         </div>
       </div>
+
+     {{ sensor.getData(1) }}</br>
+     {{ sensor.getData(1) }}</br>
+     {{ sensor.getData(1) }}</br>
 
       <div class="container">
         <!-- Example row of columns -->
