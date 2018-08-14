@@ -25,6 +25,7 @@
 
 ### APENDICE Github
 #Minha sugestao é criar o repositorio online, fazer o clone para baixar para a maquina local, incluir e alterar os arquivos e depois add, commit e push...
+#Use git pull pra atualizar da nuvem para local em repo já criado
 ##Comandos
 #Change the current working directory to your local project.
 #git init #Initialize the local directory as a Git repository.
