@@ -17,8 +17,17 @@ def load_user(user_id):
 @app.route('/index/')
 def index():
   s = Sensor()
-  
-  return render_template('index.html', sensor=s) # busca por padrao na pasta templates
+  return render_template('index.html', sensor=s, active="index") # busca por padrao na pasta templates
+
+@app.route('/config')
+@app.route('/config/')
+def config():
+  return render_template('config.html', active="config") 
+
+@app.route('/sobre')
+@app.route('/sobre/')
+def sobre():
+  return render_template('sobre.html', active="sobre") 
 
 @app.route('/login', methods=["GET", "POST"])
 def login():
@@ -31,14 +40,14 @@ def login():
           return redirect(url_for('index'))
       else:
           flash('Login falhou!')
-  return render_template('login.html', form=form) 
+  return render_template('login.html', form=form, active="login") 
 
 @app.route("/logout")
 @login_required
 def logout():
     logout_user()
     flash('Usuário fez logout com sucesso!')
-    return redirect('index')
+    return redirect(url_for('index'))
 
 #TESTES DE CRUD
 @app.route("/teste/<info>")
