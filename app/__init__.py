@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
 from flask_login import LoginManager
-from Sensor import Sensor
+from leitura_sensor import Sensor
 
 app = Flask(__name__)
 app.config.from_object('config') # config nao tem o .py no final

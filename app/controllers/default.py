@@ -6,7 +6,7 @@ from flask_login import login_user, logout_user, login_required
 from app.models.forms import LoginForm
 from app.models.tables import User
 
-from Sensor import Sensor
+from leitura_sensor import Sensor
 
 @lm.user_loader
 def load_user(user_id):
